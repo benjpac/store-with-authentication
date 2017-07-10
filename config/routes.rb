@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
+  get 'products/index'
+
+  get 'products/new'
+
+  get 'products/create'
+
+  get 'products/show'
+
   devise_for :users
   root 'home#index'
   

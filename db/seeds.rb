@@ -8,12 +8,17 @@
 Product.destroy_all
 Review.destroy_all
 
-50.times do |index|
+30.times do |index|
   new_product = Product.create!(name: Faker::Commerce.product_name,
                   price: Faker::Commerce.price,
                   description: Faker::Hipster.paragraph(2, true, 4),
-                  image: Faker::Fillmurray.image(false, 800, 300)
-                  )
-  10.times do |index|
-    Review.create!(user_id: 
+                  # image: File.new("ps4-hrdware-large18.jpg"),
+                  user_id: 2)
+  5.times do |index|
+    Review.create!(user_id: 1,
+                   product_id: new_product.id,
+                   rating: Faker::Number.between(1, 5),
+                   content: Faker::Hipster.paragraph,
                    )
+  end
+end
