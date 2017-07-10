@@ -1,2 +1,57 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="col-md-3">
+    <p class="lead">Shop Name</p>
+    <div class="list-group">
+        <a href="#" class="list-group-item active">Category 1</a>
+        <a href="#" class="list-group-item">Category 2</a>
+        <a href="#" class="list-group-item">Category 3</a>
+    </div>
+</div>
+
+<div class="col-md-9">
+    <div class="thumbnail">    
+        <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+        <div class="caption-full">
+            <h4 class="pull-right">$<%= @product.price %></h4>
+            <h4><%= @product.name %></h4>
+            <p><%= @product.description %></p>
+        </div>
+    
+        <div class="ratings">
+            <p class="pull-right"><%= @reviews.count %> reviews</p>
+            <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <%= @product.avg_rating %> stars
+            </p>
+        </div>
+    </div>
+
+    <div class="well">
+
+        <% if current_user %>
+          <%= render :partial => 'reviews/new' %>
+        <% end %>
+
+        <% @reviews.each do |review| %>
+          <hr>
+
+          <div class="row">
+              <div class="col-md-12">
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star"></span>
+                  <span class="glyphicon glyphicon-star-empty"></span>
+                  Anonymous
+                  <span class="pull-right">15 days ago</span>
+                  <p><%= review.content %></p>
+              </div>
+          </div>
+        <% end %>
+
+    </div>
+
+</div>
