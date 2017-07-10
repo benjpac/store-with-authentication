@@ -36,6 +36,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 gem 'bootstrap_form'
 gem 'paperclip', "~> 5.0.0"
+gem 'wdm', '>= 0.1.0'
 gem 'devise'
 
 group :development, :test do
