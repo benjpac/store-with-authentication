@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     # @products.each do |product|
     #   product.avg_rating = Product.get_avg_rating(product)
-    #   product.save      
+    #   product.save
     # end
   end
 
@@ -40,6 +40,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:attached_product, :user_id)
+    params.require(:product).permit(:name, :description, :price, :image, :user_id)
   end
 end

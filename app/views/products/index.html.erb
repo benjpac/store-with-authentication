@@ -12,7 +12,7 @@
 
 <div class="col-md-9">
     <% @products.each do |product| %>
-    <div class="thumbnail">    
+    <div class="thumbnail">
         <img class="img-responsive" src="http://placehold.it/800x300" alt="">
         <div class="caption-full">
             <h4 class="pull-right">$<%= product.price %></h4>
@@ -20,6 +20,7 @@
                 <%= link_to product.name, product_path(product) %>
             </h4>
             <p><%= product.description %></p>
+            <%= image_tag product.image(:large)  %>
         </div>
         <div class="ratings">
             <p class="pull-right"> <%= product.reviews.count %> reviews</p>
