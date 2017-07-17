@@ -1,24 +1,39 @@
-# README
+# Store with Authentication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Created by Ben Metzger
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Rails product / review app with authentication and authorization. Users with admin set to true are able to add, edit  and delete products, as well as remove comments.
 
-* System dependencies
+## Prereqs
 
-* Configuration
+* Rails
+* PostgreSQL
 
-* Database creation
+## Setup
 
-* Database initialization
+1) Clone repo
+2) Run bundle within project directory. Install missing gems if prompted
+3) Run "rake db:create", "rake db:migrate", and "rake db:seed" to setup the database (ensure postgres is properly installed and running)
+4) Run "rails s" to start the server, then navigate to localhost:3000
+5) Sign In using "admin@admin.com" / "password" for admin priviledges, or user@user.com / password for user priviledges
 
-* How to run the test suite
+## Technologies Used
 
-* Services (job queues, cache servers, search engines, etc.)
+* Bootstrap with Bootstrap form gem
+* Ruby / Rails
+* PostgreSQL
 
-* Deployment instructions
+## Known Bugs
 
-* ...
+Unsure
+
+## Desired Updates
+
+* Add categories
+* Improve styling
+
+### License
+
+MIT

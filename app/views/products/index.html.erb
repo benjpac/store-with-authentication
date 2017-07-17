@@ -5,7 +5,7 @@
         <a href="#" class="list-group-item">Category 2</a>
         <a href="#" class="list-group-item">Category 3</a>
     </div>
-    <% if current_user  %>
+    <% if current_user && current_user.admin? %>
         <%= link_to "Add Product", new_product_path %>
     <% end %>
 </div>
@@ -20,7 +20,7 @@
                 <%= link_to product.name, product_path(product) %>
             </h4>
             <p><%= product.description %></p>
-            <%= image_tag product.image(:large)  %>
+            <!-- <%= image_tag product.image(:large)  %> -->
         </div>
         <div class="ratings">
             <p class="pull-right"> <%= product.reviews.count %> reviews</p>

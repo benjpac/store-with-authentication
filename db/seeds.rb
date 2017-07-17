@@ -7,15 +7,28 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Product.destroy_all
 Review.destroy_all
+User.destroy_all
+
+User.create!(id: 1,
+             email: "admin@admin.com",
+             password: "password",
+             admin: true    
+            )
+
+User.create!(id: 2,
+             email: "user@user.com",
+             password: "password",
+            )
 
 30.times do |index|
-  new_product = Product.create!(name: Faker::Commerce.product_name,
+  new_product = Product.create!(user_id: 1,
+                  name: Faker::Commerce.product_name,
                   price: Faker::Commerce.price,
                   description: Faker::Hipster.paragraph(2, true, 4),
                   # image: File.new("ps4-hrdware-large18.jpg"),
-                  user_id: 2)
+                  )
   5.times do |index|
-    Review.create!(user_id: 1,
+    Review.create!(user_id: 2,
                    product_id: new_product.id,
                    rating: Faker::Number.between(1, 5),
                    content: Faker::Hipster.paragraph,
