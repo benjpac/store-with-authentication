@@ -1,4 +1,4 @@
-<%= bootstrap_form_for [current_user, @product], url: user_products_path(current_user), html: { multipart: true } do |f| %>
+<%= bootstrap_form_for @product do |f| %>
   <%= f.text_field :name %>
   <%= f.text_area :description %>
   <%= f.number_field :price %>

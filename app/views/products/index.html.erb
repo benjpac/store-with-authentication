@@ -6,7 +6,7 @@
         <a href="#" class="list-group-item">Category 3</a>
     </div>
     <% if current_user && current_user.admin? %>
-        <%= link_to "Add Product", new_product_path %>
+        <%= link_to "Add Product", new_product_path, class: 'btn btn-success' %>
     <% end %>
 </div>
 

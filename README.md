@@ -17,7 +17,7 @@ Rails product / review app with authentication and authorization. Users with adm
 2) Run bundle within project directory. Install missing gems if prompted
 3) Run "rake db:create", "rake db:migrate", and "rake db:seed" to setup the database (ensure postgres is properly installed and running)
 4) Run "rails s" to start the server, then navigate to localhost:3000
-5) Sign In using "admin@admin.com" / "password" for admin priviledges, or user@user.com / password for user priviledges
+5) Sign In using "admin@admin.com" / "password" for admin priviledges, or user@user.com / password for user priviledges. Alternatively, you can create your own user account
 
 ## Technologies Used
 
